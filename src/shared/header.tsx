@@ -1,7 +1,14 @@
 import React from "react";
 import { NestedClock } from "../components/clock/nested-clock";
 
+export interface AppHeaderProps {
+    title: string;
+}
 export class AppHeader extends React.Component {
+
+    constructor(public props: AppHeaderProps) {
+        super(props);
+    }
 
     render() {
         return (

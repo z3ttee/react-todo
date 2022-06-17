@@ -44,7 +44,7 @@ export class App extends React.Component {
             </div>
   
             <div className='flex flex-col gap-2 mt-6'>
-              {this.state.items.map((item) => {
+              {this.state["items"].map((item) => {
                 return <TodoItem key={item.id} item={item} />
               })}
             </div>

@@ -44,7 +44,7 @@ export class NestedClock extends React.Component {
     }
 
     render() {
-        return <Clock useDate={this.state.date} />
+        return <Clock useDate={this.state["date"]} />
     }
 
 }

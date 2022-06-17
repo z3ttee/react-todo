@@ -5,19 +5,23 @@
 
 import React from "react";
 
+export interface ClockState {
+    useDate?: Date;
+}
 export class Clock extends React.Component {
 
-    _interval;
+    private _interval: any;
+    public state: ClockState;
 
-    constructor(props) {
+    constructor(public props: ClockState) {
         super(props);
 
         // Assign initial values if
         // no date is provided.
         // if(typeof props.useDate == "undefined" || props.useDate == null) {
-            this.state = {
-                date: new Date()
-            };
+        this.state = {
+            useDate: new Date()
+        }
         // }
     }
 
@@ -48,7 +52,7 @@ export class Clock extends React.Component {
     }
 
     render() {
-        return <p>{this.props.useDate?.toLocaleTimeString() || this.state.date?.toLocaleTimeString()}</p>
+        return <p>{this.props.useDate?.toLocaleTimeString() || this.state.useDate?.toLocaleTimeString()}</p>
     }
 
 }

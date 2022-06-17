@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 
 export class TodoItemEntity {
-    constructor(title, description) {
-        this.id = uuidv4();
-        this.title = title;
-        this.description = description;
-    }
+    public readonly id: string = uuidv4();
+
+    constructor(
+        public readonly title: string, 
+        public readonly description: string
+    ) {}
 }
 
 export function TodoItem(props) {

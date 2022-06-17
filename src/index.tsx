@@ -1,14 +1,14 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Routing } from './routing/routes';
 import { AppFooter } from './shared/footer';
 import { AppHeader } from './shared/header';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { Routing } from "./routing/routes";
+
+const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(
   <div className='flex flex-col flex-1 w-full h-full relative overflow-hidden bg-gray-700 text-white'>
-        <AppHeader />
+        <AppHeader title='React TODO Demo' />
         
         <div className="flex-grow overflow-y-auto h-full">
           <Routing />
