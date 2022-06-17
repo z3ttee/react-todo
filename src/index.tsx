@@ -4,10 +4,13 @@ import reportWebVitals from './reportWebVitals';
 import { AppFooter } from './shared/footer';
 import { AppHeader } from './shared/header';
 import { Routing } from "./routing/routes";
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(
-  <div className='flex flex-col flex-1 w-full h-full relative overflow-hidden bg-gray-700 text-white'>
+  <Provider store={store}>
+    <div className='flex flex-col flex-1 w-full h-full relative overflow-hidden bg-gray-700 text-white'>
         <AppHeader title='React TODO Demo' />
         
         <div className="flex-grow overflow-y-auto h-full">
@@ -17,8 +20,8 @@ root.render(
         <AppFooter>
           <p>&copy; {new Date().getFullYear()} by Cedric Zitzmann</p>
         </AppFooter> 
-      </div>
-  
+    </div>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
