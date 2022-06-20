@@ -11,24 +11,23 @@ interface ItemsState {
     list: TodoItemEntity[];
 }
 
-
 const itemsSlice = createSlice({
     name: "items",
     initialState: {
-        list: [
-            new TodoItemEntity("Title 1", "Beschreibung 2"),
-            new TodoItemEntity("Title 1", "Beschreibung 2")
-        ]
+        list: []
     } as ItemsState,
     reducers: {
         deleteAll: (state) => {
             state.list = [];
+        },
+        createItem: (state, action) => {
+            state.list.push(action.payload);
         }
     }
 })
 
 
-export const { deleteAll } = itemsSlice.actions;
+export const { deleteAll, createItem } = itemsSlice.actions;
 export const store = configureStore({
     reducer: itemsSlice.reducer
 });
