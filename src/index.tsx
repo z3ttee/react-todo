@@ -12,17 +12,15 @@ const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(
   <DarkTheme>
     <Provider store={store}>
-      <div className='flex flex-col flex-1 w-full h-full relative overflow-hidden'>
-          <AppHeader title='React TODO Demo' />
+      <AppHeader />
             
-          <div className="flex-grow overflow-y-auto h-full">
-            <Routing />
-          </div>
-      
-          <AppFooter>
-            <p>&copy; {new Date().getFullYear()} by Cedric Zitzmann</p>
-          </AppFooter> 
+      <div>
+        <Routing />
       </div>
+      
+      <AppFooter>
+        <p>&copy; {new Date().getFullYear()} by Cedric Zitzmann</p>
+      </AppFooter>
     </Provider>
   </DarkTheme>
 );
