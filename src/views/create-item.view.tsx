@@ -9,7 +9,12 @@ export function AppCreateItemView() {
     const dispatch = useAppDispatch();
     
     function saveItem() {
-        dispatch(createItem(new TodoItemEntity("1", "2")));
+        const item = new TodoItemEntity("1", "2");
+        dispatch(createItem({
+            id: item.id,
+            title: item.title,
+            description: item.description
+        } as TodoItemEntity));
     }
 
     return (
